@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+    
+    <div class="ui grid container" style="margin-top: 5em;">
+      <% allPosts.forEach(function(post){ %>
+        <div class="four wide column">
+          <div class="ui raised fluid card">
+            <div class="image">
+              <img src="<%= post.image %>">
+            </div>
+            <div class="content">
+              <a class="header marginBottom" href="/allPosts/<%= post._id %>"><%= post.title %></a>
+              <p class="header"><%= post.name %></p>
+              <div class="meta marginBottom">
+                <p><%= post.address %></p>
+              </div>
+              <div class="description marginBottom">
+                <%- post.caption.substring(0, 300) %>
+              </div>
+              <div class="extra content">
+                <a href="/allPosts/<%= post._id %>" class="ui green basic button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+
+<% include ../partials/footer %>

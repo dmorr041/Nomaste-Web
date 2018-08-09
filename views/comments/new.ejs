@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+
+<div class="ui container" id="comments-new-form">
+    <h2>Add a new comment to:</h2>
+    <h1><%= post.title %></h1>
+    
+    <form class="ui form" action="/allPosts/<%= post._id %>/comments" method="POST">
+        <div class="field">
+            <label>Comment:</label>
+            <textarea name="comment[text]"></textarea>
+        </div>
+        <button class="ui green basic button">Submit</button>
+    </form>
+</div>
+
+<% include ../partials/footer %>

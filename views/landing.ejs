@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nomaste</title>
+	<!-- Semantic UI CDN -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/landing.css">
+</head>
+<body>
+
+<div id="landing-header">
+    <div class="container" id="landing-header-content">
+        <img class="ui image" src="/images/nomaste_logo2.png" id="landing-image-logo">
+        <h4 class="paddingBottom2">
+            A community for foodies to explore, experience, and savor dishes and 
+            restaurants from all over the world. Sign up today to share your foodie experience with other foodies!
+        </h4>
+        <% if(!currentUser){ %>
+            <a class="ui green button" href="/register">Sign Up</a>
+            <a class="ui green button" href="/login">Log In</a>
+        <% } else { %>
+            <a class="ui green button" href="/dashboard/<%= currentUser._id %>">Go To Your Dashboard</a>
+        <% } %>
+        <a  class="ui green massive button" 
+            id="landing-header-browse-button"
+            href="/allPosts">
+            Browse our Community
+        </a>
+    </div>
+</div>
+
+
+
+<% include partials/footer %>

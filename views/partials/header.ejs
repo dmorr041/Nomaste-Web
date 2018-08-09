@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nomaste</title>
+	<!-- Semantic UI CDN -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+	<!-- NAVBAR -->
+    <div class="ui fixed inverted huge menu" id="navbar">
+        <div class="ui container">
+            <div class="header item"><i class="utensils icon"></i>Nomaste</div>
+            <a href="/" class="item">Home</a>
+            <a href="/allPosts" class="item">Browse</a>
+            <a href="/allPosts/new" class="item">New Blog</a>
+            <div class="right menu">
+                <% if(!currentUser){ %>
+                    <a href="/login" class="item">Login</a>
+                    <a href="/register" class="item">Sign Up</a>
+                <% } else { %>
+                    <a href="/dashboard/<%= currentUser._id %>" class="item">Dashboard</a>
+                    <a href="/logout" class="item">Logout</a>
+                <% } %>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="container" id="flash-message">
+        <% if(success && success.length > 0){ %>
+            <div class="ui success message">
+                <p><%= success %></p>
+            </div>
+        <% } %>
+        <% if(error && error.length > 0){ %>
+            <div class="ui negative message">
+                <p><%= error %></p>
+            </div>
+        <% } %>
+    </div>

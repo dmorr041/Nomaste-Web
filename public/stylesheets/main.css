@@ -1,0 +1,165 @@
+#comments-new-form {
+    margin-top: 5em;
+    width: 35%;
+}
+
+#comments-new-form h1, #comments-new-form h2 {
+    text-align: center;
+}
+
+#comment-button {
+    float: right;
+}
+
+#comment-icon {
+    padding-right: 1.4em;
+}
+
+#comments-header {
+    display: inline;
+}
+
+#comments-edit-form {
+    width: 30%;
+}
+
+#registerForm {
+    width: 30%;
+    margin-top: 5em;
+}
+
+.deleteForm {
+    display: inline;
+}
+
+#loginForm {
+    width: 30%;
+    margin-top: 5em;
+}
+
+.cardImage {
+    width: 100%;
+}
+
+.postContainer {
+    margin-top: 5em;
+}
+
+#flash-message {
+    width: 50%;
+    padding-top: 4em;
+    margin: auto;
+}
+
+#dashboard-header {
+    text-align: center;
+}
+
+#map {
+    height: 200px;
+    width: 100%;
+    margin: auto;
+}
+
+.spacer {
+    height: 50px;
+    width: 100%;
+}
+
+
+
+
+
+
+.paddingTop {
+    padding-top: 1em;
+}
+
+.marginTop {
+    margin-top: 1em;
+}
+
+.paddingRight {
+    padding-right: 1em;
+}
+
+.marginRight {
+    margin-right: 1em;
+}
+
+.paddingLeft {
+    padding-left: 1em;
+}
+
+.marginLeft {
+    margin-left: 1em;
+}
+
+.paddingBottom {
+    padding-bottom: 1em;
+}
+
+.marginBottom {
+    margin-bottom: 1em;
+}
+
+.paddingTop2 {
+    padding-top: 2em;
+}
+
+.marginTop2 {
+    margin-top: 2em;
+}
+
+.paddingRight2 {
+    padding-right: 2em;
+}
+
+.marginRight2 {
+    margin-right: 2em;
+}
+
+.paddingLeft2 {
+    padding-left: 2em;
+}
+
+.marginLeft2 {
+    margin-left: 2em;
+}
+
+.paddingBottom2 {
+    padding-bottom: 2em;
+}
+
+.marginBottom2 {
+    margin-bottom: 2em;
+}
+
+.marginTop5 {
+    margin-top: 5em;
+}
+
+.paddingRight5 {
+    padding-right: 5em;
+}
+
+.marginRight5 {
+    margin-right: 5em;
+}
+
+.paddingLeft5 {
+    padding-left: 5em;
+}
+
+.marginLeft5 {
+    margin-left: 5em;
+}
+
+.paddingBottom5 {
+    padding-bottom: 5em;
+}
+
+.marginBottom5 {
+    margin-bottom: 5em;
+}
+

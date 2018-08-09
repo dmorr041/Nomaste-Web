@@ -1,0 +1,132 @@
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("../images/landing-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#landing-header {
+    text-align: center;
+}
+
+#landing-header-content {
+    width: 40%;
+    margin: auto;
+    color: #FFF;
+}
+
+#landing-header-browse-button {
+    display: block;
+    margin: auto;
+    margin-top: 2em;
+    width: 60%;
+}
+
+#landing-image-logo {
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+.paddingTop {
+    padding-top: 1em;
+}
+
+.marginTop {
+    margin-top: 1em;
+}
+
+.paddingRight {
+    padding-right: 1em;
+}
+
+.marginRight {
+    margin-right: 1em;
+}
+
+.paddingLeft {
+    padding-left: 1em;
+}
+
+.marginLeft {
+    margin-left: 1em;
+}
+
+.paddingBottom {
+    padding-bottom: 1em;
+}
+
+.marginBottom {
+    margin-bottom: 1em;
+}
+
+.paddingTop2 {
+    padding-top: 2em;
+}
+
+.marginTop2 {
+    margin-top: 2em;
+}
+
+.paddingRight2 {
+    padding-right: 2em;
+}
+
+.marginRight2 {
+    margin-right: 2em;
+}
+
+.paddingLeft2 {
+    padding-left: 2em;
+}
+
+.marginLeft2 {
+    margin-left: 2em;
+}
+
+.paddingBottom2 {
+    padding-bottom: 2em;
+}
+
+.marginBottom2 {
+    margin-bottom: 2em;
+}
+
+.marginTop5 {
+    margin-top: 5em;
+}
+
+.paddingRight5 {
+    padding-right: 5em;
+}
+
+.marginRight5 {
+    margin-right: 5em;
+}
+
+.paddingLeft5 {
+    padding-left: 5em;
+}
+
+.marginLeft5 {
+    margin-left: 5em;
+}
+
+.paddingBottom5 {
+    padding-bottom: 5em;
+}
+
+.marginBottom5 {
+    margin-bottom: 5em;
+}
+

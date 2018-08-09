@@ -1,0 +1,113 @@
+<% include ../partials/header %>
+
+<div class="ui grid">
+    <div class="sixteen wide column">
+        <!-- POST -->
+        <div class="ui main text container segment" style="margin-top: 5em;">
+            <div class="ui huge header"><%= post.title %></div>
+            <div>
+                <em><p>Created by <%= post.author.username %></p></em>
+            </div>
+            <div class="ui top attached">
+                <div class="item">
+                    <img src="<%= post.image %>" class="ui centered rounded image cardImage">
+                    <div class="ui grid">
+                        <div class="eleven wide column marginTop">
+                            <div class="ui segment">
+                                <div class="content marginBottom2">
+                                    <strong><p><%= post.name %></p></strong>
+                                    <p><%= post.address %></p>
+                                </div>
+                                <div class="description">
+                                    <p><%= post.caption %></p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="five wide column marginTop">
+                                <div class="ui container">
+                                    <div id="map"></div>
+                                </div>
+                                <div class="spacer"></div>
+                            <% if(currentUser && post.author.id.equals(currentUser._id)){ %>
+                                <!-- EDIT POST BUTTON -->
+                                <a class="ui icon basic yellow button" href="/allPosts/<%= post._id %>/edit"><i class="edit outline icon"></i>Edit</a>
+                                <!-- DELETE POST BUTTON -->
+                                <form class="deleteForm" action="/allPosts/<%= post._id %>?_method=DELETE" method="POST">
+                                    <button class="ui icon basic red button" type="submit"><i class="trash alternate outline icon"></i>Delete</button>
+                                </form>
+                            <% } %>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- COMMENTS -->
+        <div class="ui text container segment">
+            <div class="ui comments">
+                <h3 id="comments-header" class="ui header">Comments</h3>
+                <!-- NEW COMMENT BUTTON -->
+                <a id="comment-button" href="<%= post._id %>/comments/new"><i id="comment-icon" class="comment outline icon"></i>Comment</a>
+                <hr>
+                <% post.comments.forEach(function(comment){ %>
+                    <div class="comment">
+                        <a class="author"><%= comment.author.username %></a>
+                        <div class="content">
+                            <div class="text">
+                                <p><%= comment.text %></p>
+                            </div>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                                <div class="actions">
+                                    <!-- EDIT COMMENT BUTTON -->
+                                    <a href="/allPosts/<%= post._id %>/comments/<%= comment._id %>/edit" class="ui icon basic yellow mini button">
+                                        <i class="edit outline icon"></i>Edit
+                                    </a>
+                                    <!-- DELETE COMMENT BUTTON -->
+                                    <form class="deleteForm" action="/allPosts/<%= post._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                        <button class="ui icon basic red mini button" type="submit">
+                                            <i class="trash alternate outline icon"></i>Delete
+                                        </button>
+                                    </form>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+  function initMap() {
+    var lat = <%= post.lat %>;
+    var lng = <%= post.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= post.name %><br />
+      <%= post.location %></strong>
+      <p><%= post.caption %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFkcjaBbgutBvLDyCWuBYJKYKNqP5wr3E&callback=initMap"></script>
+
+<% include ../partials/footer %>

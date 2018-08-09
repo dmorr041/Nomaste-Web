@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">New Post</div>
+    <form class="ui form" action="/allPosts" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="title" placeholder="Title" required>
+        </div>
+        <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Restaurant Name" required>
+        </div>
+        <div class="field">
+            <label>Address</label>
+            <input type="text" name="address" placeholder="Restaurant Address" required>
+        </div>
+        <div class="field">
+            <label>Image</label>
+            <input type="text" name="image" placeholder="Image URL" required>
+        </div>
+        <div class="field">
+            <label>Content</label>
+            <textarea name="caption" required></textarea>
+        </div>
+        <input class="ui blue button" type="submit">
+    </form>
+</div>
+
+<% include ../partials/footer %>
